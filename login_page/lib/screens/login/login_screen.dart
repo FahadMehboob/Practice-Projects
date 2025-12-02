@@ -144,6 +144,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 300,
                 width: 300,
                 decoration: BoxDecoration(
+                  backgroundBlendMode: BlendMode.color,
                   shape: BoxShape.circle,
                   color: Colors.blue.withAlpha(120),
                 ),
