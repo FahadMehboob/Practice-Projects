@@ -4,7 +4,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+    HomeScreen({super.key});
+   int currentIndex =0;
+    List< String> bannerItems = ['banner1.jpg', 'banner2.jpg', 'banner3.jpg'];
 
   @override
   Widget build(BuildContext context) {
@@ -52,10 +54,14 @@ class HomeScreen extends StatelessWidget {
           SizedBox(
             height: 150,
             child: PageView(
-              children: const [
-                BannerItem(image: 'banner1.jpg'),
-                BannerItem(image: 'banner2.jpg'),
-                BannerItem(image: 'banner3.jpg'),
+              onPageChanged: (value){
+                setState(){
+                  currentIndex = value;
+                }
+              },
+              children:  [
+              for(String banner in bannerItems)
+                BannerItem(image: banner),
               ],
             ),
           ),
@@ -67,9 +73,9 @@ class HomeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const BannerIndicator(),
-                const BannerIndicator(),
-                const BannerIndicator(),
+                 BannerIndicator(),
+                 BannerIndicator(),
+                 BannerIndicator(),
               ],
             ),
           )

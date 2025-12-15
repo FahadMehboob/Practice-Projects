@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class BannerIndicator extends StatelessWidget {
-  const BannerIndicator({Key? key}) : super(key: key);
+  const BannerIndicator({super.key});
 
   @override
   Widget build(BuildContext context) {
